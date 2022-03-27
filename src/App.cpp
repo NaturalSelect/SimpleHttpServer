@@ -12,8 +12,10 @@ private:
 protected:
     virtual void OnNewMessage(sharpen::NetStreamChannelPtr channel,const sharpen::HttpRequest &req,sharpen::HttpResponse &res) override
     {
-        res.Body().CopyFrom("Hello World",11);
-        res.Header()["Content-Length"].assign("11",2);
+        const char msg[] = u8"关注嘉然,顿顿解馋";
+        res.Body().CopyFrom(msg,sizeof(msg) - 1);
+        res.Header()["Content-Length"].assign("25",2);
+        res.Header()["Content-Type"] = "text/plain;charset=utf-8";
     }
 public:
 
