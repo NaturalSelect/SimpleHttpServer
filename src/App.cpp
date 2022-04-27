@@ -14,7 +14,7 @@ protected:
     {
         const char msg[] = "Hello world";
         res.Body().CopyFrom(msg,sizeof(msg) - 1);
-        res.Header()["Content-Length"].assign("12",2);
+        res.Header()["Content-Length"].assign("11",2);
         res.Header()["Content-Type"] = "text/plain;charset=utf-8";
     }
 public:
